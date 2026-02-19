@@ -1,0 +1,96 @@
+<div class="page-container">
+
+  <div class="page-header">
+    <h2>Propositions de thèse</h2>
+
+    <button class="btn-primary" (click)="goToNew()">
+      + Nouvelle Proposition
+    </button>
+  </div>
+
+  <div class="table-container">
+
+    <table>
+      <thead>
+      <tr>
+        <th>Encadrant</th>
+        <th>Équipe</th>
+        <th>Sujet</th>
+        <th>Début</th>
+        <th>Validation Chef d'équipe</th>
+        <th>Validation Direction</th>
+        <th>Doctorant</th>
+        <th>État</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      <tr *ngFor="let p of propositions">
+
+        <!-- Encadrant -->
+        <td>{{ p.encadrant?.nom || '—' }}</td>
+
+        <!-- Équipe -->
+        <td>{{ p.encadrant?.equipe || '—' }}</td>
+
+        <!-- Sujet -->
+        <td class="subject">
+          {{ p.sujet || '—' }}
+
+          <div *ngIf="p.pdfPath">
+            <a [href]="'http://localhost:8080/files/' + p.pdfPath"
+               target="_blank"
+               class="pdf-link">
+              PDF
+            </a>
+          </div>
+        </td>
+
+        <!-- Début -->
+        <td>
+          {{ p.dateDebut ? (p.dateDebut | date:'dd/MM/yyyy') : '—' }}
+        </td>
+
+
+        <td>
+            <span [ngClass]="getValidationClass(p.validationChef)">
+              {{ formatValidation(p.validationChef) }}
+            </span>
+        </td>
+
+
+        <td>
+            <span [ngClass]="getValidationClass(p.validationDirection)">
+              {{ formatValidation(p.validationDirection) }}
+            </span>
+        </td>
+
+        <!-- Doctorant -->
+        <td>
+            <span *ngIf="p.doctorant">
+              {{ p.doctorant.nom }} {{ p.doctorant.prenom }}
+            </span>
+          <span *ngIf="!p.doctorant">—</span>
+        </td>
+
+        <!-- État -->
+        <td>
+            <span [ngClass]="getStatusClass(p.statut)">
+              {{ p.statut || '—' }}
+            </span>
+        </td>
+
+      </tr>
+
+      <tr *ngIf="propositions.length === 0">
+        <td colspan="8" class="empty-message">
+          Aucune proposition enregistrée.
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

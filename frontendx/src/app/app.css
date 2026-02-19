@@ -1,0 +1,26 @@
+.main-header {
+  background: white;
+  padding: 20px 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-bottom: 4px solid #4A79A8;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-section img {
+  height: 70px;
+}
+
+.logo-section h1 {
+  color: #4A79A8;
+  font-size: 22px;
+}
+
+.logo-section p {
+  color: #A9A3C7;
+  font-size: 14px;
+}

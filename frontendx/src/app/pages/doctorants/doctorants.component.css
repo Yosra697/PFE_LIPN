@@ -1,0 +1,138 @@
+/* ================= CONTAINER ================= */
+.page-container {
+  width: 85%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* ================= HEADER ================= */
+.main-title {
+  color: #4A79A8;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ================= TABLE CARD ================= */
+.table-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER */
+thead {
+  background: #4A79A8;
+  color: white;
+}
+
+th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* BODY */
+td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Hover effet */
+tbody tr:hover {
+  background-color: #F5F6FA;
+}
+
+/* ================= BADGE EQUIPE ================= */
+.badge-equipe {
+  background: #4A79A8;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ================= FILE LINK ================= */
+.file-link {
+  color: #4A79A8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.file-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-action {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Supprimer */
+.btn-delete {
+  background: #C62828;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #A61B1B;
+  transform: translateY(-2px);
+}
+
+/* ================= EMPTY STATE ================= */
+.empty {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  color: #777;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Badges */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.badge-grey {
+  background: #9E9E9E;
+}
+
+.badge-blue {
+  background: #4A79A8;
+}
+
+.badge-green {
+  background: #2E8B57;
+}
+
+.badge-red {
+  background: #C62828;
+}
+
+.badge-purple {
+  background: #A9A3C7;
+}

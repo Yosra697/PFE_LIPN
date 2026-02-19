@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #F4F6FA;
+  color: #2F3E5C;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.page-container {
+  width: 85%;
+  margin: auto;
+  margin-top: 40px;
+}
+

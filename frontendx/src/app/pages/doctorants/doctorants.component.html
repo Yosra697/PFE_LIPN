@@ -1,0 +1,86 @@
+<div class="page-container">
+
+  <h2 class="main-title">Synthèse des propositions de doctorant</h2>
+
+  <div class="table-section">
+
+    <table>
+
+      <thead>
+      <tr>
+        <th>Encadrant</th>
+        <th>Doctorant</th>
+        <th>Equipe</th>
+        <th>Début</th>
+        <th>Validation Chef d'équipe</th>
+        <th>Validation Direction</th>
+        <th>Etat</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      <tr *ngFor="let d of doctorants">
+
+        <!-- Encadrant -->
+        <td>
+          {{ d.encadrant?.nom || '—' }}
+        </td>
+
+        <!-- Doctorant -->
+        <td>
+          <strong>{{ d.nom }} {{ d.prenom }}</strong>
+
+          <div *ngIf="d.dossierPath">
+            <a [href]="'http://localhost:8080/files/' + d.dossierPath"
+               target="_blank"
+               class="file-link">
+              📂 Dossier
+            </a>
+          </div>
+        </td>
+
+        <!-- Equipe -->
+        <td>
+          {{ d.equipe || d.encadrant?.equipe || '—' }}
+        </td>
+
+        <!-- Début -->
+        <td>
+          {{ d.dateDebut ? (d.dateDebut | date:'dd/MM/yyyy') : '—' }}
+        </td>
+
+        <td>
+            <span [ngClass]="getValidationClass(d.validationChef)">
+              {{ formatValidation(d.validationChef) }}
+            </span>
+        </td>
+
+
+        <td>
+            <span [ngClass]="getValidationClass(d.validationDirection)">
+              {{ formatValidation(d.validationDirection) }}
+            </span>
+        </td>
+        <!-- Etat -->
+        <td>
+          <span [ngClass]="getStatusClass(d.statut)">
+              {{ d.statut || '—' }}
+            </span>
+        </td>
+
+      </tr>
+
+      <tr *ngIf="doctorants.length === 0">
+        <td colspan="7" class="empty">
+          Aucun doctorant enregistré
+        </td>
+      </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

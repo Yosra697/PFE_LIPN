@@ -1,0 +1,23 @@
+<nav class="navbar" *ngIf="authService.isAuthenticated()">
+
+  <div class="nav-left">
+    <span class="logo">Gestion Thèses</span>
+
+    <a routerLink="/propositions"
+       routerLinkActive="active">
+      Propositions
+    </a>
+
+    <a routerLink="/doctorants"
+       routerLinkActive="active">
+      Doctorants
+    </a>
+  </div>
+
+  <div class="nav-right">
+    <button (click)="logout()" class="logout-btn">
+      Déconnexion
+    </button>
+  </div>
+
+</nav>

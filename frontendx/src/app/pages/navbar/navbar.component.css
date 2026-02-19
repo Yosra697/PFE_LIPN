@@ -1,0 +1,58 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  height: 60px;
+  background: linear-gradient(to right, #4A79A8, #3A6288);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== LEFT SIDE ===== */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== LINKS ===== */
+.nav-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-left a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.active {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ===== RIGHT SIDE ===== */
+.logout-btn {
+  background: white;
+  color: #4A79A8;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #e8eef5;
+}
